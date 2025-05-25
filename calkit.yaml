@@ -4,6 +4,25 @@ description: >
   research project.
 dependencies:
   - matlab
+environments:
+  matlab:
+    kind: matlab
+pipeline:
+  stages:
+    collect-data:
+      kind: matlab-script
+      environment: matlab
+      script_path: scripts/collect_data.m
+      outputs:
+        - data/raw/data.parquet
+    plot-data:
+      kind: matlab-script
+      environment: matlab
+      script_path: scripts/plot_data.m
+      outputs:
+        - figures/plot.png
+      inputs:
+        - data/raw/data.parquet
 datasets:
   - path: data/raw/data.parquet
     title: Raw data
