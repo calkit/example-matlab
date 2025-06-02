@@ -1,0 +1,45 @@
+{
+  "matlab_version": "25.1.0.2943329",
+  "products": [
+    {
+      "name": "MATLAB",
+      "version": "25.1"
+    },
+    {
+      "name": "Simulink",
+      "version": "25.1"
+    },
+    {
+      "name": "Global Optimization Toolbox",
+      "version": "25.1"
+    },
+    {
+      "name": "MATLAB Report Generator",
+      "version": "25.1"
+    },
+    {
+      "name": "Optimization Toolbox",
+      "version": "25.1"
+    },
+    {
+      "name": "Parallel Computing Toolbox",
+      "version": "25.1"
+    },
+    {
+      "name": "Simscape",
+      "version": "25.1"
+    },
+    {
+      "name": "Simscape Multibody",
+      "version": "25.1"
+    },
+    {
+      "name": "Statistics and Machine Learning Toolbox",
+      "version": "25.1"
+    },
+    {
+      "name": "Symbolic Math Toolbox",
+      "version": "25.1"
+    }
+  ]
+}
