@@ -7,6 +7,10 @@ dependencies:
 environments:
   matlab:
     kind: matlab
+    version: R2024b
+    products:
+      - Statistics_and_Machine_Learning_Toolbox
+      - Parallel_Computing_Toolbox
 pipeline:
   stages:
     collect-data:

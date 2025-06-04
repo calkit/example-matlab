@@ -1,5 +1,5 @@
 stages:
-  _check_env_matlab:
+  _check-env-matlab:
     cmd: calkit check matlab-env --name matlab --output .calkit/env-locks/matlab.json
     deps: []
     outs:
