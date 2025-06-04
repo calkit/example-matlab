@@ -8,14 +8,14 @@ stages:
           persist: true
     always_changed: true
   collect-data:
-    cmd: matlab -noFigureWindows -batch "run('scripts/collect_data.m');"
+    cmd: calkit xenv -n matlab --no-check -- "run('scripts/collect_data.m');"
     deps:
       - scripts/collect_data.m
       - .calkit/env-locks/matlab.json
     outs:
       - data/raw/data.parquet
   plot-data:
-    cmd: matlab -noFigureWindows -batch "run('scripts/plot_data.m');"
+    cmd: calkit xenv -n matlab --no-check -- "run('scripts/plot_data.m');"
     deps:
       - scripts/plot_data.m
       - data/raw/data.parquet
