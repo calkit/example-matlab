@@ -1,0 +1,94 @@
+[
+    {
+        "RepoTags": [
+            "matlab:r2024b-e5b33f72"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2025-06-04T21:05:19.237315417Z",
+        "Author": "",
+        "Config": {
+            "User": "matlab",
+            "ExposedPorts": {
+                "5901/tcp": {},
+                "6080/tcp": {},
+                "8888/tcp": {}
+            },
+            "Env": [
+                "PATH=/home/matlab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "MW_SERVICEHOST_USE_HOSTNAME_FOR_PERSISTENCE=false",
+                "MWI_ENABLE_TOKEN_AUTH=False",
+                "MWI_APP_PORT=8888",
+                "MW_DDUX_FORCE_ENABLE=true",
+                "MW_CONTEXT_TAGS=MATLAB:DOCKERHUB:V1,MATLAB:TOOLBOXES:DOCKERFILE:V1",
+                "MHLM_CONTEXT=MATLAB_DOCKERHUB"
+            ],
+            "Entrypoint": [
+                "tini",
+                "--",
+                "/bin/run.sh"
+            ],
+            "WorkingDir": "/home/matlab",
+            "Labels": {
+                "maintainer": "The MathWorks, Inc.",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "22.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 4651859839,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:346f14bf17b9846c3e67362b00c16c9085772033cb7c58742c4e1efa22466d38",
+                "sha256:af43eebcc94902c293e27c8e6423022866445278b832353d8ffe8333787f39a1",
+                "sha256:f08b30854602b1a2d9b2f4458315cec0b428986708b21cd84db6f73cb0787a4a",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:c35124c1e0d7ca642132bf9116140f2e937d7b4a78f2827ba77c703e3ef5e6e8",
+                "sha256:013a6807d52bc3c8e3b4c2a8acffa5101c1922f37130f26f4d527be9d89f2288",
+                "sha256:be6f33ad7f4f1b1d75e0dceaec11b00814ae482d4d16186074881061fda620e6",
+                "sha256:ec2f15ecfdc639336430649ec69bd860ee0360cb91b6d08b5b7ed7f12e39cba2",
+                "sha256:d6b0c10807489b70e9328b8055c5eb756e01fbd7af59f13e902c4f2c99dfb7a3",
+                "sha256:6fd284107866999fb9bf70fa3e68f65198189afc2344ba6c8ae6b9dcaf8596ee",
+                "sha256:0bcf7e6b979b082b41c4cc79b9884de1f1bc7a10ce80644f85f6a36073edf6bb",
+                "sha256:03ac6c35e2ec9c9cfe427d79bfb254ccc029768cd5e1b8f70c8ef46e7a689746",
+                "sha256:93cee93b357796632eae898b7c5cf2bea7f3d8c97fcc1094dd93f4305b4c6579",
+                "sha256:310b2e978ec3cf4224dd419d4e5e1274e381bdad73359fecc523986141e31507",
+                "sha256:b0450a925631ecab6c83e5a98017f35f17f9560d214cf6360466b47492dad424",
+                "sha256:d22641ce50a797daac63aeb759b4712e106777b39b14a4ee8684d06115730e1b",
+                "sha256:590d8ec008d0fc8292eea5aa1c96d520a0c72092bd70cdbea0e7dcda87bdd210",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:a5e7e9393e53480ab7452ae66a5a38f902f23d53a9123add3aa4fe770cbaebbf",
+                "sha256:677ed8b7975ca61d616cc6e94778a434659cef40be17a3c1580ba420fb7f1fe4",
+                "sha256:7c2b93e34c3387f3470e7d2ed1d1396a8867477f3fcaf47449ee1dfcb1926433",
+                "sha256:6689fcd4d8edd31a63bdb233b65cdf9320ec02aad780a3bee1ae25f6f8fe576b",
+                "sha256:e7ba9f6ee27ca909795e3d741d0e6e2ea5c40970e898a2d1e729077312a4d61d",
+                "sha256:aa50be58d88a752dffdf3a5d0b2df7db1d5433ee31d6a84371ce12f1c7d498aa",
+                "sha256:86db38688d71dd5142fb9f36091d8e11d34f3aea29ee2201dd88d842b5db2380",
+                "sha256:f1280182c8c5ab31bae78a194b31759de29a214ae37df5e02b1c33b2d94d5f11",
+                "sha256:1f5483cf6ca5444fae425dd7864480c47876289f41ef7c1497b54beef8a1a3ca",
+                "sha256:784e14ca7b33899c67098a59405b6d423290d4990a82cc7fdaf578ef46b8c71f",
+                "sha256:46574fdb719f0d88c524957ff128737c9b07f4e197abc9bfd001a5d638c2730f",
+                "sha256:2ea6ef8fc3cf8480ee26165927718b298223752a0172c2e4b1a77af13d338016",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:a13eacfb1ec365aa40ff380bf7ae4a97f789158d7230c9d477b2291d0665de75",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:3966f698dced15e796f1143904adff113bd520c7ab759fae7200187ed9405fa3",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:d7ee331fd136cace7f356c793d12736b714185c462a2e655845d0ed42f78e3be",
+            "size": 856
+        },
+        "DockerfileMD5": "49563e914bf7401c0d1dcfb98a081002",
+        "DepsMD5s": {}
+    }
+]
