@@ -13,50 +13,44 @@ stages:
       md5: 0b2be6aa89192942ea0e1263f9f7e55c
       size: 384
   plot-data:
-    cmd: calkit xenv -n matlab --no-check -- "run('scripts/plot_data.m');"
+    cmd: matlab -batch "run('scripts/plot_data.m');"
     deps:
-    - path: .calkit/env-locks/matlab.json
-      hash: md5
-      md5: 074a6771582255a621b5fda8cb2cc2d3
-      size: 5082
     - path: data/raw/data.parquet
       hash: md5
-      md5: 7d4fadae29fbf5fdf9eedc81a9f0cc9e
+      md5: e901c02a1a54165d5e6d5d5973d594e6
       size: 9853
     - path: scripts/plot_data.m
       hash: md5
-      md5: dd5ffb54107b06b64d0f3fb5be4429f9
-      size: 144
+      md5: ba7e2fcc376bc1f4b17fca546082cf7b
+      size: 148
     outs:
     - path: figures/plot.png
       hash: md5
-      md5: 0459648a57a7fd45c8264e4902a15494
-      size: 79715
+      md5: 8d280eaa88e1604646333ac52bbc2cc1
+      size: 39730
   collect-data:
-    cmd: calkit xenv -n matlab --no-check -- "run('scripts/collect_data.m');"
+    cmd: matlab -batch "run('scripts/collect_data.m');"
     deps:
-    - path: .calkit/env-locks/matlab.json
-      hash: md5
-      md5: 074a6771582255a621b5fda8cb2cc2d3
-      size: 5082
     - path: scripts/collect_data.m
       hash: md5
-      md5: e9f0c4b4277e253b9034dbc7e5495058
-      size: 142
+      md5: 990ebc3af464a6d91033e2450c9522e3
+      size: 174
     outs:
     - path: data/raw/data.parquet
       hash: md5
-      md5: 7d4fadae29fbf5fdf9eedc81a9f0cc9e
+      md5: e901c02a1a54165d5e6d5d5973d594e6
       size: 9853
   _check_env_matlab:
-    cmd: calkit check matlab-env --name matlab --output .calkit/env-locks/matlab.json
+    cmd: calkit check matlab-env --name matlab --output 
+      .calkit/env-locks/matlab.json
     outs:
     - path: .calkit/env-locks/matlab.json
       hash: md5
       md5: 71c8f7b71fac0c8a028a0b11a25cb685
       size: 806
   _check-env-matlab:
-    cmd: calkit check matlab-env --name matlab --output .calkit/env-locks/matlab.json
+    cmd: calkit check matlab-env --name matlab --output 
+      .calkit/env-locks/matlab.json
     outs:
     - path: .calkit/env-locks/matlab.json
       hash: md5

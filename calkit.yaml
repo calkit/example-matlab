@@ -2,24 +2,24 @@ title: MATLAB example
 description: >
   This project shows how to incorporate MATLAB into a reproducible
   research project.
-environments:
-  matlab:
-    kind: matlab
-    version: R2024b
-    products:
-      - Statistics_and_Machine_Learning_Toolbox
-      - Parallel_Computing_Toolbox
+# environments:
+#   matlab:
+#     kind: matlab
+#     version: R2024b
+#     products:
+#       - Statistics_and_Machine_Learning_Toolbox
+#       - Parallel_Computing_Toolbox
 pipeline:
   stages:
     collect-data:
       kind: matlab-script
-      environment: matlab
+      environment: _system
       script_path: scripts/collect_data.m
       outputs:
         - data/raw/data.parquet
     plot-data:
       kind: matlab-script
-      environment: matlab
+      environment: _system
       script_path: scripts/plot_data.m
       outputs:
         - figures/plot.png
