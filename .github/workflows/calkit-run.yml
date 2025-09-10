@@ -13,7 +13,7 @@ permissions:
 # after running the pipeline
 concurrency:
   group: calkit-run-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   main:
