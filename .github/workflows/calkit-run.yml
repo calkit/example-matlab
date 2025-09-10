@@ -1,4 +1,4 @@
-name: Run calkit pipeline
+name: Run Calkit pipeline
 
 on:
   push:
