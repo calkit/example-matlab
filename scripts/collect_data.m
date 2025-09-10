@@ -1,7 +1,7 @@
 disp("Processing data");
 
 % Set random seed
-rng(42);
+rng(432);
 
 voltage = rand(1000, 1);
 data = table(voltage);
