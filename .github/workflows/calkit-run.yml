@@ -49,6 +49,7 @@ jobs:
             Simscape
             Simscape_Multibody
       - name: Run Calkit
-        uses: calkit/run-action@v1
+        uses: calkit/run-action@378d217f814687b57b1b71fd710c43e8c75dfdef
         with:
           dvc_token: ${{ secrets.CALKIT_DVC_TOKEN }}
+          matlab: true
