@@ -35,3 +35,9 @@ figures:
     title: The plot
     description: The plot.
     stage: plot-data
+environments:
+  matlab-jupyter:
+    path: requirements.txt
+    kind: uv-venv
+    prefix: .venv
+    python: '3.14'
