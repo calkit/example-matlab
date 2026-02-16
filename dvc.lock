@@ -13,11 +13,11 @@ stages:
       md5: 0b2be6aa89192942ea0e1263f9f7e55c
       size: 384
   plot-data:
-    cmd: matlab -batch "run('scripts/plot_data.m');"
+    cmd: matlab -batch "restoredefaultpath; run('scripts/plot_data.m');"
     deps:
     - path: data/raw/data.parquet
       hash: md5
-      md5: e901c02a1a54165d5e6d5d5973d594e6
+      md5: 69f8e2d950d29dc34ce8b1ce944c637c
       size: 9853
     - path: scripts/plot_data.m
       hash: md5
@@ -26,31 +26,29 @@ stages:
     outs:
     - path: figures/plot.png
       hash: md5
-      md5: 8d280eaa88e1604646333ac52bbc2cc1
-      size: 39730
+      md5: beee9043fe29cb7f49f6c4343e06a615
+      size: 58503
   collect-data:
-    cmd: matlab -batch "run('scripts/collect_data.m');"
+    cmd: matlab -batch "restoredefaultpath; run('scripts/collect_data.m');"
     deps:
     - path: scripts/collect_data.m
       hash: md5
-      md5: 990ebc3af464a6d91033e2450c9522e3
-      size: 174
+      md5: 698569e0ca9128c52f0dec553a9badd1
+      size: 210
     outs:
     - path: data/raw/data.parquet
       hash: md5
-      md5: e901c02a1a54165d5e6d5d5973d594e6
+      md5: 69f8e2d950d29dc34ce8b1ce944c637c
       size: 9853
   _check_env_matlab:
-    cmd: calkit check matlab-env --name matlab --output 
-      .calkit/env-locks/matlab.json
+    cmd: calkit check matlab-env --name matlab --output .calkit/env-locks/matlab.json
     outs:
     - path: .calkit/env-locks/matlab.json
       hash: md5
       md5: 71c8f7b71fac0c8a028a0b11a25cb685
       size: 806
   _check-env-matlab:
-    cmd: calkit check matlab-env --name matlab --output 
-      .calkit/env-locks/matlab.json
+    cmd: calkit check matlab-env --name matlab --output .calkit/env-locks/matlab.json
     outs:
     - path: .calkit/env-locks/matlab.json
       hash: md5

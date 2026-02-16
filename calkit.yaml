@@ -9,6 +9,7 @@ description: >
 #     products:
 #       - Statistics_and_Machine_Learning_Toolbox
 #       - Parallel_Computing_Toolbox
+
 pipeline:
   stages:
     collect-data:
@@ -19,25 +20,22 @@ pipeline:
         - data/raw/data.parquet
     plot-data:
       kind: matlab-script
-      environment: _system
       script_path: scripts/plot_data.m
-      outputs:
-        - figures/plot.png
+      environment: _system
       inputs:
         - data/raw/data.parquet
+      outputs:
+        - path: figures/plot.png
+          storage: dvc
+
 datasets:
   - path: data/raw/data.parquet
     title: Raw data
     description: The raw data from the experiment.
     stage: collect-data
+
 figures:
   - path: figures/plot.png
     title: The plot
     description: The plot.
     stage: plot-data
-environments:
-  matlab-jupyter:
-    path: requirements.txt
-    kind: uv-venv
-    prefix: .venv
-    python: '3.14'

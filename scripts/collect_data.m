@@ -1,5 +1,9 @@
 disp("Processing data");
 
+addpath("../src");
+
+myfunction();
+
 % Set random seed
 rng(432);
 
