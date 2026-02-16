@@ -42,3 +42,6 @@ figures:
     title: The plot
     description: The plot.
     stage: plot-data
+
+showcase:
+  - figure: figures/plot.png

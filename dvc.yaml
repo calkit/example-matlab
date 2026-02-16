@@ -1,6 +1,6 @@
 stages:
   collect-data:
-    cmd: matlab -batch "run('scripts/collect_data.m');"
+    cmd: matlab -batch "restoredefaultpath; run('scripts/collect_data.m');"
     deps:
       - scripts/collect_data.m
       - src/myfunction.m
@@ -8,10 +8,10 @@ stages:
       - data/raw/data.parquet:
           cache: true
           persist: false
-    desc: Automatically generated from the 'collect-data' stage in 
-      calkit.yaml. Changes made here will be overwritten.
+    desc: Automatically generated from the 'collect-data' stage in calkit.yaml.
+      Changes made here will be overwritten.
   plot-data:
-    cmd: matlab -batch "run('scripts/plot_data.m');"
+    cmd: matlab -batch "restoredefaultpath; run('scripts/plot_data.m');"
     deps:
       - scripts/plot_data.m
       - data/raw/data.parquet
@@ -19,5 +19,5 @@ stages:
       - figures/plot.png:
           cache: true
           persist: false
-    desc: Automatically generated from the 'plot-data' stage in 
-      calkit.yaml. Changes made here will be overwritten.
+    desc: Automatically generated from the 'plot-data' stage in calkit.yaml.
+      Changes made here will be overwritten.
