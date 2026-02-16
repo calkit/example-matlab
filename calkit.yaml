@@ -15,21 +15,27 @@ pipeline:
       kind: matlab-script
       environment: _system
       script_path: scripts/collect_data.m
+      inputs:
+        - src/myfunction.m
       outputs:
-        - data/raw/data.parquet
+        - path: data/raw/data.parquet
+          storage: dvc
     plot-data:
       kind: matlab-script
       environment: _system
       script_path: scripts/plot_data.m
-      outputs:
-        - figures/plot.png
       inputs:
         - data/raw/data.parquet
+      outputs:
+        - path: figures/plot.png
+          storage: dvc
+
 datasets:
   - path: data/raw/data.parquet
     title: Raw data
     description: The raw data from the experiment.
     stage: collect-data
+
 figures:
   - path: figures/plot.png
     title: The plot
@@ -40,4 +46,4 @@ environments:
     path: requirements.txt
     kind: uv-venv
     prefix: .venv
-    python: '3.14'
+    python: "3.14"
