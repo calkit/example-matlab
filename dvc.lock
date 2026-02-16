@@ -13,7 +13,7 @@ stages:
       md5: 0b2be6aa89192942ea0e1263f9f7e55c
       size: 384
   plot-data:
-    cmd: matlab -batch "restoredefaultpath; run('scripts/plot_data.m');"
+    cmd: matlab -batch "run('scripts/plot_data.m');"
     deps:
     - path: data/raw/data.parquet
       hash: md5
@@ -26,10 +26,10 @@ stages:
     outs:
     - path: figures/plot.png
       hash: md5
-      md5: beee9043fe29cb7f49f6c4343e06a615
-      size: 58503
+      md5: 5eb557590809f95054078fd7897ed596
+      size: 68396
   collect-data:
-    cmd: matlab -batch "restoredefaultpath; run('scripts/collect_data.m');"
+    cmd: matlab -batch "run('scripts/collect_data.m');"
     deps:
     - path: scripts/collect_data.m
       hash: md5
