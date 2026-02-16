@@ -35,6 +35,10 @@ stages:
       hash: md5
       md5: 698569e0ca9128c52f0dec553a9badd1
       size: 210
+    - path: src/myfunction.m
+      hash: md5
+      md5: 84a5dc7525d6297428329a1a79c8ac87
+      size: 53
     outs:
     - path: data/raw/data.parquet
       hash: md5

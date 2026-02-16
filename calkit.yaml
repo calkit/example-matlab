@@ -14,10 +14,13 @@ pipeline:
   stages:
     collect-data:
       kind: matlab-script
-      environment: _system
       script_path: scripts/collect_data.m
+      environment: _system
+      inputs:
+        - src/myfunction.m
       outputs:
-        - data/raw/data.parquet
+        - path: data/raw/data.parquet
+          storage: dvc
     plot-data:
       kind: matlab-script
       script_path: scripts/plot_data.m

@@ -3,8 +3,11 @@ stages:
     cmd: matlab -batch "restoredefaultpath; run('scripts/collect_data.m');"
     deps:
       - scripts/collect_data.m
+      - src/myfunction.m
     outs:
-      - data/raw/data.parquet
+      - data/raw/data.parquet:
+          cache: true
+          persist: false
     desc: Automatically generated from the 'collect-data' stage in calkit.yaml.
       Changes made here will be overwritten.
   plot-data:
